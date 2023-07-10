@@ -1,0 +1,74 @@
+<!--pages/my/my.wxml-->
+<wxs module="my" src="my.wxs" />
+<!--index.wxml-->
+<view class="container">
+  <view class="userinfo">
+    <block wx:if="{{canIUseOpenData}}">
+      <!-- 用户的头像 -->
+      <view class="userinfo-avatar" bindtap="bindViewTap">
+        <!-- open-data标签，用于展示微信开放的数据 -->
+        <open-data type="userAvatarUrl"></open-data>
+      </view>
+      <open-data type="userNickName"></open-data>
+    </block>
+    <block wx:elif="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" bindtap="getUserProfile"> 获取头像昵称 </button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    </block>
+  </view>
+</view>
+
+
+<view class="item-box" style="position: absolute; left: 0rpx; top: 532rpx">
+  <!-- 选择词库的按钮 -->
+  <view class="share-button">
+    <text>选择词库</text>
+    <button class="share-button-button" bindtap="clickThesaurus"></button>
+  </view>
+  <!-- 选择词库的菜单表 -->
+  <action-sheet hidden="{{actionSheetHidden}}" bindchange="actionSheetChange">
+    <action-sheet-item class="item" bindtap="bindItemTap" id="0">
+      {{actionSheetItems[0]}}
+    </action-sheet-item>
+    <action-sheet-item class="item" bindtap="bindItemTap" id="1">
+      {{actionSheetItems[1]}}
+    </action-sheet-item>
+    <action-sheet-item class="item" bindtap="bindItemTap" id="2">
+      {{actionSheetItems[2]}}
+    </action-sheet-item>
+    <action-sheet-item class="item" bindtap="bindItemTap" id="3">
+      {{actionSheetItems[3]}}
+    </action-sheet-item>
+    <action-sheet-item class="item" bindtap="bindItemTap" id="4">
+      {{actionSheetItems[4]}}
+    </action-sheet-item>
+    <action-sheet-cancel class="cancel">取消</action-sheet-cancel>
+  </action-sheet>
+  <!-- 分享按钮 -->
+  <view class="share-button">
+    <text>分享</text>
+    <button class="share-button-button" plain_del open-type='share'></button>
+  </view>
+  <!-- 客服按钮 -->
+  <view class="share-button">
+    <text>联系客服</text>
+    <button class="share-button-button" plain_del open-type="contact"></button>
+  </view>
+  <!-- 意见反馈按钮 -->
+  <view class="feedback-button" style="position: relative; left: 146rpx; top: 0rpx">
+    <text>意见反馈</text>
+    <button style="width: 127rpx; height: 64rpx; display: block; box-sizing: border-box; left: -3rpx; top: 0rpx; position: absolute"  class="feedback-button-button" open-type="feedback" />
+  </view>
+  <!-- 关于我们按钮 -->
+  <view class="feedback-button" style="position: relative; left: 370rpx; top: -128rpx">
+    <text>关于我们</text>
+    <button style="position: absolute; left: 12rpx; top: 1rpx; width: 154rpx; height: 62rpx; display: block; box-sizing: border-box"  bindtap="goWe" class="feedback-button-button"/>
+  </view>
+  <!-- 底部留白 -->
+  <view class="bottom-fix" />
+</view>
+
+<view hidden class="request-authorize">
+  <view class="req-auth-tip">我们需要您的一些信息，以便给您提供更好的服务</view>
+  <button size="mini" type="primary" open-type="getUserInfo">授权</button>
+</view>

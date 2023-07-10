@@ -1,0 +1,147 @@
+/* pages/my/my.wxss */
+/* 定义背景样式 */
+page{
+  background-color: #b0cee8;
+}
+.col{
+  background-color: #b0cee8;
+}
+
+.request-authorize{
+  position:fixed;
+  width:200px;
+  height:100px;
+  top:calc((100vh - 100px) / 2);
+  left:calc((100vw - 200px) / 2);
+  background-color:#fff;
+  box-shadow:0 0 20px rgba(255,255,255,0.2);
+  border-radius:5px;
+  text-align:center;
+}
+.req-auth-tip{
+  padding:20px 20px 10px 20px;
+  font-size:11px;
+  color:#333;
+}
+
+.item-box{
+  position:absolute;
+  top:calc(80vw - 30px);
+  left:0;
+  width:calc(100% - 40px);
+  background-color:rgba(255,255,255,1);
+  padding: 0px 20px 20px 20px;
+  min-height:calc(100vh - 80vw - 30px);
+  border-radius:20px 20px 0 0;
+  background-color: #b0cee8;
+}
+.bottom-fix{
+  position:absolute;
+  height:32px;
+  width:100vw;
+  bottom:-30px;
+  left:0px;
+  background-color:#b0cee8;
+  /*background-color:rgba(250,250,250,0.9);*/
+  /*background:linear-gradient(180deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,1));*/
+}
+.item-use{
+  font-size:14px;
+}
+.use-canvas{
+  width:calc(100% -40px);
+  height:120px;
+}
+
+.item-bar-title{
+  margin:0 0 10px 0;
+}
+.todo-bar{
+  width:100%;
+  border-radius:100px;
+  text-align:center;
+  font-size:12px;
+  color:#333;
+  /*background-color:rgba(0,0,0,0.5);*/
+  padding:6px 0;
+  margin:10px 0;
+  /*box-shadow:0 0 10px rgba(0,0,0,0.07);*/
+  border:1px solid rgba(0,0,0,0.2);
+}
+
+/* button外的view的样式 */
+.share-button{
+  position:relative;
+  left: 10px;
+  width:90%;
+  height:30px;
+  margin: 25px 0;
+  border-radius:20px;
+  background-color:#73bcff;
+  font-size:14px;
+  color:#fff;
+  text-align:center;
+  line-height:30px;
+  /*box-shadow:0 0 20px rgba(0,0,0,0.2);*/
+  border:1px solid rgba(0,0,0,0.2);
+}
+.share-button-button{
+  position:absolute;
+  top:0;
+  width:100%;
+  height:100%;
+  opacity:0;
+}
+
+.feedback-button{
+  position:relative;
+  width:60px;
+  height:32px;
+  line-height:32px;
+  color:#1c80ff;
+  text-align:center;
+  left:calc((100% - 60px) / 2);
+  margin-top:30px;
+  font-size:12px;
+ 
+}
+.feedback-button-button{
+  position:absolute;
+  top:0;
+  width:100%;
+  height:100%;
+  opacity:0;
+}
+
+.text-edit{
+  position:fixed;
+  top:25vh;
+  left:20px;
+  width:calc(100% - 80px);
+  padding:20px;
+  background-color:#333;
+  color:#fff;
+  border-radius:40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+  opacity:0.8;
+  transition:all 0.2s;
+  display:none;
+}
+
+/**index.wxss**/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-size:22px;
+}
+
+.userinfo-avatar {
+  overflow: hidden;
+  width: 160rpx;
+  height: 160rpx;
+  margin: 25rpx;
+  border-radius: 50%;
+  border: 5px solid #fff;
+}

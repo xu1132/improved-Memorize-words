@@ -1,0 +1,37 @@
+{
+  "pages":[
+    "pages/reciteWords/reciteWords",
+    "pages/my/my",
+    "pages/logs/logs",
+    "pages/we/we"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#b0cee8",
+    "navigationBarTitleText": "Weixin",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh": true,
+    "backgroundColor": "#73bcff"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "list": [
+    {
+      "pagePath": "pages/reciteWords/reciteWords",
+      "text": "背单词",
+      "iconPath": "icon/book.png",
+      "selectedIconPath": "icon/book1.png"
+    },
+    {
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath": "icon/my.png",
+      "selectedIconPath": "icon/my1.png"
+    }
+  ],
+  "selectedColor": "#ffffff",
+  "backgroundColor": "#73bcff",
+  "color": "#003875"
+  }
+}

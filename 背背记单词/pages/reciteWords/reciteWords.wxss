@@ -1,0 +1,110 @@
+/* 定义背景样式 */
+page {
+  background-color: #b0cee8;
+}
+
+/* 给大块的样式 */
+.main {
+  position: relative; 
+  left: 43rpx; 
+  top: 120rpx;
+  overflow: hidden;
+  background-color: #f2f9ff;
+}
+
+/* 给标题块的样式 */
+
+/* xx词汇的样式 */
+.title_t1 {
+  background-color: #92c1ed;
+  color: #fff;
+  position: relative;
+  font-size: 60rpx;
+  left: 200rpx;
+  top: 40rpx;
+ 
+  display: block;
+  box-sizing: border-box;
+  text-align: center;
+}
+/* 当日单词量的样式 */
+.wordQuantity {
+  position: relative;
+  left: 450rpx;
+  top: -50rpx;
+  width: 300rpx;
+  background-color: #3960bd;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+
+/* 给两个按钮“认识”、“模糊”的块的样式*/
+.button {
+  height: 100rpx;
+  width: 600rpx;
+  position: absolute;
+  top: 550rpx;
+  left: 40rpx;
+  /* border: 2rpx solid #8a8a8a; */
+}
+
+/* 给两个button的样式 */
+.button_b1 {
+  float: left;
+  border: 15rpx solid rgb(141, 165, 243);
+  border-radius: 10rpx;
+  background: #4980ff;
+  margin-left: 100rpx;
+  color: #fff;
+  border-radius: 45%;
+}
+
+/* 给内容块的样式 */
+.div2 {
+  position: absolute;
+  background-color: #fff;
+  left: 78rpx;
+  top: 174rpx;
+  height: 700rpx;
+  width: 600rpx;
+  left: 80rpx;
+  border: 2rpx solid #8a8a8a;
+}
+
+
+.cet {
+  display: flex;
+  flex-direction: column;
+  margin-top: 200rpx;
+  align-items: center;
+}
+
+.word {
+  font-family: Chalkboard;
+  font-size: 80rpx;
+  align-items: center;
+  padding-left: 120rpx;
+}
+
+/* 单词释义的块的样式 */
+.word-definition {
+  position: relative;
+  top: 20rpx;
+  left: 50rpx;
+  width: 85%;
+}
+
+.pron {
+  margin-top: 40rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.pron-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 5rpx;
+}

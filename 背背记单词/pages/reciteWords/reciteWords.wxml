@@ -1,0 +1,61 @@
+<!-- 背完单词前展示的页面 -->
+<view wx:if="{{isNull == true}}" class="main" style="width: 678rpx; height: 968rpx; display: block; box-sizing: border-box;">
+  <!-- 标题块 -->
+  <view class="title" style="width: 282rpx; height: 132rpx; display: block; box-sizing: border-box; position: relative; left: 333rpx; top: 8rpx">
+    <!-- 书籍图标 -->
+    <view style="width: 109rpx; height: 21rpx; display: block; box-sizing: border-box; left: -221rpx; top: 103rpx">
+      <image style="height: 150rpx; width: 178rpx; display: inline-block; box-sizing: border-box; position: relative; left: -292rpx; top: 23rpx" src="../../icon/bookshelf.png"></image>
+    </view>
+    <!-- xx词汇 -->
+    <view wx:if="{{isNull}}" class="title_t1" style="width: 373rpx; height: 92rpx; display: block; box-sizing: border-box; left: -99rpx; top: 12rpx">
+      {{title}}</view>
+    <!-- 今日单词量目标设置 -->
+    <view class="wordQuantity" style="position: relative; left: -99rpx; top: 12rpx; width: 373rpx; height: 45rpx; display: block; box-sizing: border-box">
+      第
+      <text style="font-size: large;">{{index+1}}</text>
+      组，学习量：
+      {{wordQuantity}}
+    </view>
+  </view>
+
+  <!-- 内容 -->
+  <view class="div2" wx:if="{{isNull}}" style="position: absolute; left: 61rpx; top: 202rpx; width: 549rpx; height: 575rpx; display: block; box-sizing: border-box">
+    <!-- 
+    这个模块是用来放单词显示答案前的内容
+    其中包括单词的字母组合、单词的音标。
+  -->
+    <view class="content">
+      <!-- 这个是单词的拼写 -->
+      <text class='word'>{{content}}</text>
+      <!-- 这个是单词的音标  -->
+      <view catchtap='playAudio' class="pron">
+        <image class='pron-icon' src="../../icon/laba.png" style="width: 54rpx; height: 61rpx; display: block; box-sizing: border-box; left: 26rpx; top: 0rpx; position: relative">
+        </image>
+
+        <text style="font-size:20px; width: 286rpx; height: 61rpx; display: block; box-sizing: border-box; left: 61rpx; top: 0rpx; position: relative">|{{pron}}|</text>
+      </view>
+    </view>
+    <!-- 这个是单词的释义 -->
+    <view class="word-definition">
+      <text wx:if="{{show}}" class="word-definition_d1">{{definition}}</text>
+    </view>
+    <button style="background-color: #4980ff; color: #ffff; position: relative; left: 1rpx; top: 139rpx" bindtap="show" wx:if="{{show == false}}">释义</button>
+  </view>
+  <!-- 
+    这里是两个按钮的模块，
+    包括认识、模糊。
+  -->
+  <view class="button" style="position: absolute; left: 66rpx; top: 830rpx; width: 549rpx; height: 104rpx; display: block; box-sizing: border-box">
+    <button class="button_b1" size="mini" bindtap='know' style="position: relative; left: -68rpx; top: 0rpx">认识</button>
+    <button class="button_b1" size="mini" bindtap='next' style="position: relative; left: 34rpx; top: 0rpx">模糊</button>
+  </view>
+</view>
+
+<!-- 背完单词后展示的页面 -->
+<view style="position:relative;left:10%;top: 300rpx;" wx:if="{{isNull == false}}">
+  <text style="position: relative;left: 66rpx;top: 50%;">恭喜你完成了本组词汇的学习！！！\n</text>
+  <text style="position: relative;left: 126rpx;top: 50%;">请前往第</text>
+  <text style="position: relative;left: 136rpx;top: 50%;color:#0076ff;font-size: large;">{{index+2}}</text>
+  <text style="position: relative;left: 146rpx;top: 50%;">组学习！！！</text>
+  <button style="position: relative;left:-180rpx;top:120rpx;" size="mini" bindtap="nextGroup">下一组学习</button>
+</view>
